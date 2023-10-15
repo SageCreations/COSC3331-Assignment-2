@@ -51,20 +51,28 @@ public class MyQueue {
 
     public void displayQueue() {
         System.out.print(name + " (front -> rear) : ");
-        MyQueue tempQueue = this;
 
-        if (nItems == 0)
-        {
-            System.out.print("empty");
+        if (isEmpty()) {
+            System.out.println("empty");
+            return;
         }
 
-        for(int i = 0; i < nItems; i++) {
-            if (i != nItems-1) {
-                System.out.print(tempQueue.remove() + ",  ");
-            } else {
-                System.out.print(tempQueue.remove());
+        if (front <= rear) {
+            for (int i = front; i <= rear; i++) {
+                System.out.print(queArray[i] + " ");
+            }
+        } else {
+            // from front to end of array
+            for (int i = front; i < maxSize; i++) {
+                System.out.print(queArray[i] + " ");
+            }
+            // from start of array to rear
+            for (int i = 0; i <= rear; i++) {
+                System.out.print(queArray[i] + " ");
             }
         }
+
+
         System.out.println("");
     }
 }

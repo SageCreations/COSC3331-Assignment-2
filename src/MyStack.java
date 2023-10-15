@@ -42,7 +42,7 @@ public class MyStack {
 
         for(int i = 0; i <= top; i++) {
             if (i != top) {
-                System.out.print(stackArray[i] + ",  ");
+                System.out.print(stackArray[i] + "   ");
             } else {
                 System.out.print(stackArray[i]);
             }
